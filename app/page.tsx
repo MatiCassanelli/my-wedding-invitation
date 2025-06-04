@@ -21,6 +21,7 @@ export default function Home() {
     isLoading,
     validateInvitationCode,
     homeData,
+    requiresPayment,
   } = useInvitation();
 
   useEffect(() => {
@@ -122,7 +123,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mt-12"
           >
-            <h2 className="text-5xl text-rose-300 font-tangerine mb-6">
+            <h2 className="text-6xl text-rose-300 font-tangerine mb-6">
               Nos casamos!
             </h2>
             <p className="text-gray-600 font-bold">
@@ -139,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {homeData?.paymentInfo ? (
+      {requiresPayment && homeData?.paymentInfo ? (
         <PaymentSection paymentInfo={homeData.paymentInfo} />
       ) : (
         <motion.section

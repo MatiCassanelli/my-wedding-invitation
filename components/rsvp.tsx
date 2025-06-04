@@ -157,7 +157,11 @@ export default function RSVP() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
         >
-          <a className="inline-block bg-rose-300 text-gray-800 px-6 py-3 uppercase tracking-wider text-sm hover:bg-rose-400 transition-colors cursor-pointer">
+          <a
+            className="inline-block bg-rose-300 text-gray-800 px-6 py-3 uppercase tracking-wider text-sm hover:bg-rose-400 transition-colors cursor-pointer"
+            href="https://forms.gle/JT5jFNQUkpPpCJQf7"
+            target="__blank"
+          >
             Completar Formulario
           </a>
         </motion.div>
