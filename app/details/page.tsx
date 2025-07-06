@@ -186,11 +186,7 @@ export default function Details() {
             className="mt-8 text-center bg-gray-50 p-4 border border-gray-200 rounded-lg shadow-sm"
           >
             <h3 className="text-3xl mb-4 font-tangerine">Dress Code</h3>
-            <p className="font-medium mb-4">Formal Elegante</p>
-            <p className="text-sm">
-              Los tonos blancos y crudos son EXCLUSIVIDAD de la novia. Por
-              favor, no los uses.
-            </p>
+            <p className="font-medium">Formal Elegante</p>
           </motion.div>
         </div>
       </motion.section>

@@ -13,14 +13,14 @@ export default function HeroSection({ currentPage }: HeroSectionProps) {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {isMobile ? (
         <div
-          className="absolute inset-0 bg-cover bg-center z-0 bg-[url(/mati-ro.jpeg)]"
+          className="absolute inset-0 bg-cover bg-center z-0 bg-[url(/hero-mati-ro.jpg)]"
           style={{
             filter: "brightness(0.4)",
           }}
         />
       ) : (
         <div
-          className="absolute inset-0 bg-cover bg-center z-0 bg-[url(/mati-ro-2.jpeg)]"
+          className="absolute inset-0 bg-cover bg-center z-0 bg-[url(/hero-landscape-mati-ro.jpg)]"
           style={{
             filter: "brightness(0.4)",
           }}
@@ -34,9 +34,7 @@ export default function HeroSection({ currentPage }: HeroSectionProps) {
           transition={{ duration: 0.8 }}
           className="mb-4"
         >
-          <h1 className="text-4xl font-tangerine">
-            Nuestra Boda
-          </h1>
+          <h1 className="text-4xl font-tangerine">Nuestra Boda</h1>
         </motion.div>
 
         <motion.div

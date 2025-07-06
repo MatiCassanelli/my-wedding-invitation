@@ -74,7 +74,7 @@ export default function Home() {
             >
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mx-auto mb-4">
                 <Image
-                  src="/mati.jpg"
+                  src="/mati.png"
                   alt="Mati"
                   className="w-full h-full object-cover"
                   width={300}
@@ -105,7 +105,7 @@ export default function Home() {
             >
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mx-auto mb-4">
                 <Image
-                  src="/ro.jpg"
+                  src="/ro.png"
                   alt="Ro"
                   className="w-full h-full object-cover"
                   width={300}
