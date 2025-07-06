@@ -12,6 +12,7 @@ import Image from "next/image";
 import HeroSection from "@/components/hero-section";
 import RSVP from "@/components/rsvp";
 import PaymentSection from "@/components/payment-section";
+import PhotoCarousel from "@/components/photo-carousel";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -140,6 +141,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Photo Carousel Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="pt-16 bg-white"
+      >
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <p className="text-gray-700 max-w-2xl mx-auto text-center mb-8">
+              Antes del gran día, nos sacamos unas fotos para ir entrando en
+              clima... y obviamente Almendra no podía faltar 💛🐶🐾
+            </p>
+            <PhotoCarousel />
+          </motion.div>
+        </div>
+      </motion.section>
+
       {requiresPayment && homeData?.paymentInfo ? (
         <PaymentSection paymentInfo={homeData.paymentInfo} />
       ) : (
@@ -173,7 +198,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.2 }}
-                  className="bg-gray-50 p-6 text-center"
+                  className="md:mt-8 text-center bg-gray-50 p-6 text-center border border-gray-200 rounded-lg shadow-sm"
                 >
                   <h4 className="font-medium mb-2">{bankInfo.bankName}</h4>
                   <p className="text-sm mb-1">
