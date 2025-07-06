@@ -8,7 +8,7 @@ import InvitationCodeForm from "@/components/invitation-code-form";
 import { useInvitation } from "@/context/invitation-context";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
-import HeroSection from "@/components/heroSection";
+import HeroSection from "@/components/hero-section";
 import RSVP from "@/components/rsvp";
 
 export default function Details() {

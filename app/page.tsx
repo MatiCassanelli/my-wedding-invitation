@@ -9,7 +9,7 @@ import InvitationCodeForm from "@/components/invitation-code-form";
 import { Heart, Loader2 } from "lucide-react";
 import { useInvitation } from "@/context/invitation-context";
 import Image from "next/image";
-import HeroSection from "@/components/heroSection";
+import HeroSection from "@/components/hero-section";
 import RSVP from "@/components/rsvp";
 import PaymentSection from "@/components/payment-section";
 
