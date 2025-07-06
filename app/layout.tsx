@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import { Tangerine } from "next/font/google";
 import "./globals.css";
 import { InvitationProvider } from "@/context/invitation-context";
-import { Meta } from "@/components/meta";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +16,34 @@ const tangerine = Tangerine({
 });
 
 export const metadata: Metadata = {
-  title: "Boda Mati & Ro",
-  description: "Invitación a nuestra boda",
+  title: "Invitación para la boda de Mati y Ro",
+  description:
+    "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
+  openGraph: {
+    title: "Invitación para la boda de Mati y Ro",
+    description:
+      "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
+    url: "https://boda-mati-ro.web.app",
+    siteName: "Boda Mati y Ro",
+    images: [
+      {
+        url: "https://boda-mati-ro.web.app/mati-ro.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Mati y Ro - Invitación de Boda",
+        type: "image/jpeg",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Invitación para la boda de Mati y Ro",
+    description:
+      "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
+    images: ["https://boda-mati-ro.web.app/mati-ro.jpeg"],
+  },
 };
 
 export default function RootLayout({
@@ -29,7 +54,6 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${tangerine.variable}`}>
       <body className={inter.className}>
-        <Meta />
         <InvitationProvider>{children}</InvitationProvider>
       </body>
     </html>
