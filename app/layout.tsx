@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "Invitación para la boda de Mati y Ro",
   description:
     "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
+  metadataBase: new URL("https://boda-mati-ro.web.app"),
   openGraph: {
     title: "Invitación para la boda de Mati y Ro",
     description:
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Boda Mati y Ro",
     images: [
       {
-        url: "https://boda-mati-ro.web.app/mati-ro.jpeg",
+        url: "/mati-ro.jpeg",
         width: 1200,
         height: 630,
         alt: "Mati y Ro - Invitación de Boda",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     title: "Invitación para la boda de Mati y Ro",
     description:
       "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
-    images: ["https://boda-mati-ro.web.app/mati-ro.jpeg"],
+    images: ["/mati-ro.jpeg"],
   },
 };
 
