@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Boda Mati y Ro",
     images: [
       {
-        url: "/mati-ro.jpeg",
+        url: "/hero-mati-ro.jpg",
         width: 1200,
         height: 630,
         alt: "Mati y Ro - Invitación de Boda",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Invitación para la boda de Mati y Ro",
     description:
       "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
-    images: ["/mati-ro.jpeg"],
+    images: ["/hero-mati-ro.jpg"],
   },
 };
 
