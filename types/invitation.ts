@@ -3,10 +3,10 @@ export interface BankInfo {
   accountNumber: string;
   cbu: string;
   alias: string;
+  whatsapp: string;
 }
 
 export interface PaymentInfo {
-  required: boolean;
   amount: number;
   currency: string;
   message: string;

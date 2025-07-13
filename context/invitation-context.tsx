@@ -7,6 +7,7 @@ import type {
   GuestGroup,
   HomePageData,
   DetailsPageData,
+  BankInfo,
 } from "@/types/invitation";
 
 type InvitationContextType = {
@@ -20,6 +21,7 @@ type InvitationContextType = {
   validateInvitationCode: (code: string) => Promise<boolean>;
   clearInvitationCode: () => void;
   guestCount: number;
+  bankInfo: BankInfo[];
 };
 
 const InvitationContext = createContext<InvitationContextType | undefined>(
@@ -35,12 +37,40 @@ export function InvitationProvider({ children }: { children: ReactNode }) {
   const [detailsData, setDetailsData] = useState<DetailsPageData | null>(null);
   const [requiresPayment, setRequiresPayment] = useState(false);
   const [guestCount, setGuestCount] = useState(0);
+  const [bankInfo, setBankInfo] = useState<BankInfo[]>([]);
+
+  const fetchBankInfo = async (): Promise<BankInfo[]> => {
+    try {
+      // Get all documents from the bankInfo collection
+      const bankInfoRef = collection(db, "bankInfo");
+      const querySnapshot = await getDocs(bankInfoRef);
+
+      if (querySnapshot.empty) {
+        console.log("No bank info documents found, using fallback");
+        return [];
+      }
+
+      const bankInfoData: BankInfo[] = [];
+      querySnapshot.forEach((doc) => {
+        const data = doc.data() as BankInfo;
+        bankInfoData.push(data);
+      });
+
+      return bankInfoData;
+    } catch (error) {
+      console.error("Error fetching bank info:", error);
+      return [];
+    }
+  };
 
   const validateInvitationCode = async (code: string): Promise<boolean> => {
     setIsLoading(true);
     setError(null);
 
     try {
+      const bankInfoData = await fetchBankInfo();
+      setBankInfo(bankInfoData);
+
       // Query Firestore for the invitation code
       const guestGroupsRef = collection(db, "guestGroups");
       const q = query(guestGroupsRef, where("id", "==", code));
@@ -98,6 +128,7 @@ export function InvitationProvider({ children }: { children: ReactNode }) {
         homeData,
         detailsData,
         requiresPayment,
+        bankInfo,
         validateInvitationCode,
         clearInvitationCode,
         guestCount,

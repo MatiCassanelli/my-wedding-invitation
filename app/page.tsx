@@ -13,6 +13,7 @@ import HeroSection from "@/components/hero-section";
 import RSVP from "@/components/rsvp";
 import PaymentSection from "@/components/payment-section";
 import PhotoCarousel from "@/components/photo-carousel";
+import GiftSection from "@/components/gift-section";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -165,53 +166,29 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {requiresPayment && homeData?.paymentInfo ? (
-        <PaymentSection paymentInfo={homeData.paymentInfo} />
-      ) : (
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-16 bg-white"
-        >
-          <div className="container mx-auto px-4 max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="text-center mb-12"
-            >
-              <p className="text-gray-700 mb-4">{homeData?.giftMessage}</p>
-              <h3 className="text-5xl text-rose-300 font-tangerine mb-4">
-                {homeData?.giftQuote}
-              </h3>
-              <p className="text-gray-700">{homeData?.giftDetails}</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {homeData?.bankInfo?.map((bankInfo) => (
-                <motion.div
-                  key={bankInfo.cbu}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.2 }}
-                  className="md:mt-8 text-center bg-gray-50 p-6 text-center border border-gray-200 rounded-lg shadow-sm"
-                >
-                  <h4 className="font-medium mb-2">{bankInfo.bankName}</h4>
-                  <p className="text-sm mb-1">
-                    Cuenta: {bankInfo.accountNumber}
-                  </p>
-                  <p className="text-sm mb-1">CBU: {bankInfo.cbu}</p>
-                  <p className="text-sm">Alias: {bankInfo.alias}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-      )}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-12 mt-6 bg-gray-50"
+      >
+        <div className="container mx-auto px-4 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-8"
+          >
+            {requiresPayment && homeData?.paymentInfo ? (
+              <PaymentSection paymentInfo={homeData.paymentInfo} />
+            ) : (
+              <GiftSection />
+            )}
+          </motion.div>
+        </div>
+      </motion.section>
 
       <RSVP />
       <Footer />
