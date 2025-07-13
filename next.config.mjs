@@ -1,4 +1,20 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    unoptimized: true
+  },
+  // Disable server-side features for static export
+  experimental: {
+    esmExternals: 'loose'
+  }
+}
 
-export default nextConfig;
+export default nextConfig

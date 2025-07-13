@@ -21,9 +21,9 @@ export interface HomePageData {
   message: string;
   venue: string;
   bankInfo: BankInfo[];
-  giftMessage: string;
-  giftQuote: string;
-  giftDetails: string;
+  giftMessage?: string;
+  giftQuote?: string;
+  giftDetails?: string;
   paymentInfo?: PaymentInfo;
 }
 

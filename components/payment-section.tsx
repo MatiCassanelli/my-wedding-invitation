@@ -51,7 +51,10 @@ export default function PaymentSection({ paymentInfo }: PaymentSectionProps) {
               <span className="text-xl font-bold text-gray-800">
                 ${paymentInfo.amount}
               </span>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-xs text-gray-600 mt-0">
+                Si querés, podes pagarlo en hasta 3 cuotas!
+              </p>
+              <p className="text-sm text-gray-600 mt-2">
                 Fecha límite: {paymentInfo.deadline}
               </p>
             </div>

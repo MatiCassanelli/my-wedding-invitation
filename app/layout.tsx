@@ -1,11 +1,11 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Tangerine } from "next/font/google"
-import "./globals.css"
-import { InvitationProvider } from "@/context/invitation-context"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Tangerine } from "next/font/google";
+import "./globals.css";
+import { InvitationProvider } from "@/context/invitation-context";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 // Load Tangerine font
 const tangerine = Tangerine({
@@ -13,17 +13,44 @@ const tangerine = Tangerine({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-tangerine",
-})
+});
 
 export const metadata: Metadata = {
-  title: "Boda Mati & Ro",
-  description: "Invitación a nuestra boda",
-}
+  title: "Invitación para la boda de Mati y Ro",
+  description:
+    "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
+  metadataBase: new URL("https://boda-mati-ro.web.app"),
+  openGraph: {
+    title: "Invitación para la boda de Mati y Ro",
+    description:
+      "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
+    url: "https://boda-mati-ro.web.app",
+    siteName: "Boda Mati y Ro",
+    images: [
+      {
+        url: "/hero-mati-ro.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mati y Ro - Invitación de Boda",
+        type: "image/jpeg",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Invitación para la boda de Mati y Ro",
+    description:
+      "¡Esta es la invitación para nuestra boda! Leé toda la info y completá el formulario para confirmar tu asistencia.",
+    images: ["/hero-mati-ro.jpg"],
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="es" className={`${tangerine.variable}`}>
@@ -31,5 +58,5 @@ export default function RootLayout({
         <InvitationProvider>{children}</InvitationProvider>
       </body>
     </html>
-  )
+  );
 }
