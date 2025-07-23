@@ -1,13 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import type { PaymentInfo } from "@/types/invitation";
 import BankInfo from "./bank-info";
-import { useInvitation } from "@/context/invitation-context";
-
-interface PaymentSectionProps {
-  paymentInfo: PaymentInfo;
-}
 
 export default function GiftSection() {
   return (
@@ -26,12 +19,6 @@ export default function GiftSection() {
       </p>
       <div className="space-y-4">
         <BankInfo animate={false} className="bg-gray-50 p-4 rounded-md" />
-      </div>
-      <div className="mt-6 pt-6 border-t border-gray-200">
-        <p className="text-sm text-gray-600 italic">
-          Por favor, enviá el comprobante de la transferencia a nuestro
-          WhatsApp.
-        </p>
       </div>
     </div>
   );
