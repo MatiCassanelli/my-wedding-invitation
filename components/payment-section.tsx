@@ -21,8 +21,8 @@ export default function PaymentSection({ paymentInfo }: PaymentSectionProps) {
           nuestra historia.
         </p>
         <p className="text-gray-700 mb-4">
-          Para que esta celebración sea posible, estamos pidiendo una
-          contribución para cubrir parte de los costos del evento.
+          Tu presencia será nuestro mayor regalo. Por eso, te pedimos que
+          confirmes asistencia pagando tu tarjeta.
         </p>
         <p className="text-md text-gray-700 mb-6">
           Si podés y querés sumarte, nos va a encantar tenerte con nosotros en
