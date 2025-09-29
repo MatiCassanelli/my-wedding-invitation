@@ -104,13 +104,15 @@ export default function Details() {
                   Sábado 15 de Noviembre, 17.00 - 17.40
                 </p>
                 <p className="text-sm font-bold mb-4">Parroquia Urca</p>
-
-                <p className="text-sm mb-4">
+                <p className="text-sm mb-1">
                   Los invitamos a ser testigos de nuestra unión en una ceremonia
                   llena de amor y emoción, donde daremos el sí para siempre ante
                   los ojos de Dios.
                 </p>
-
+                <p className="text-sm font-bold mb-4">
+                  La ceremonia arranca a las 17 horas puntual. Por favor,
+                  no te demores.
+                </p>
                 <p className="text-sm mb-2">Lucas de Figueroa y Mendoza 879</p>
                 <a
                   href="https://maps.app.goo.gl/4kAD2y8fhQWKcbvG9"
