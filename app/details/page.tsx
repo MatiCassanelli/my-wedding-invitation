@@ -170,7 +170,7 @@ export default function Details() {
 
                 <p className="text-sm mb-2">Ruta E53. KM 9.5</p>
                 <a
-                  href="Ruta E53. KM 9.5"
+                  href="https://maps.app.goo.gl/Fsxr9jfCbCMdfGrh9"
                   className="text-xs text-rose-400 hover:underline"
                 >
                   Abrir en Maps
